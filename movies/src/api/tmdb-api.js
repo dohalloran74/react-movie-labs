@@ -40,3 +40,9 @@ export const getMovieReviews = (id) => {
       return json.results;
     });
 };
+
+
+// export getproduction country from api
+export const getProductionCountry = (id) => {
+  
+}

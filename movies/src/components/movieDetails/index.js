@@ -8,10 +8,7 @@ import NavigationIcon from "@mui/icons-material/Navigation";
 import Fab from "@mui/material/Fab";
 import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
-import MovieReviews from "../movieReviews"
-
-import { useParams } from 'react-router-dom';
-
+import MovieReviews from "../movieReviews";
 
 const root = {
     display: "flex",
@@ -24,7 +21,7 @@ const root = {
 const chip = { margin: 0.5 };
 
 const MovieDetails = ({ movie }) => {  // Don't miss this!
-  const [drawerOpen, setDrawerOpen] = useState(false);
+    const [drawerOpen, setDrawerOpen] = useState(false);
 
   return (
     <>
@@ -48,7 +45,18 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
             <Chip label={g.name} sx={{...chip}} />
           </li>
         ))}
-      </Paper>
+
+<li>
+          <Chip label="Production Countries" sx={{...chip}} color="primary" />
+        </li>
+        {movie.production_countries.map((countries) => (
+          <li key={countries.name}>
+            <Chip label={countries.name} sx={{...chip}} />
+          </li>
+        ))}
+
+
+        </Paper>
       <Paper component="ul" sx={{...root}}>
         <Chip icon={<AccessTimeIcon />} label={`${movie.runtime} min.`} />
         <Chip
@@ -60,7 +68,15 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
           label={`${movie.vote_average} (${movie.vote_count}`}
         />
         <Chip label={`Released: ${movie.release_date}`} />
+
+        
       </Paper>
+
+
+
+
+
+
       <Fab
         color="secondary"
         variant="extended"
