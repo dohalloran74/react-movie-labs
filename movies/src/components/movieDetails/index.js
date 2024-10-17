@@ -61,6 +61,7 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
         <Chip label={`Released: ${movie.release_date}`} />
       </Paper>
       
+      
       <Paper 
         component="ul" 
         sx={{...root}}
@@ -74,6 +75,7 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
           </li>
         ))}
       </Paper>
+     
       
       <Fab
         color="secondary"
